@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ 
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>fr.neutronstars</groupId>
+  <artifactId>BotDiscord</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <name>Bot Discord</name>
+  <description>Petit bot discord réalisé avec la librairie de JDA et LavaPlayer.</description>
+  
+  <build>
+    
+    <sourceDirectory>src</sourceDirectory>
+    
+    <plugins>  
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <repositories>
+  	<repository>
+    	<id>central</id>
+    	<name>bintray</name>
+    	<url>http://jcenter.bintray.com</url>
+  	</repository>
+  </repositories>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>net.dv8tion</groupId>
+    	<artifactId>JDA</artifactId>
+    	<version>3.2.0_238</version>
+    </dependency>
+    
+    <dependency>
+    	<groupId>com.sedmelluq</groupId>
+    	<artifactId>lavaplayer</artifactId>
+    	<version>1.2.42</version>
+  	</dependency>
+  	
+  	<dependency>
+    	<groupId>org.slf4j</groupId>
+    	<artifactId>slf4j-simple</artifactId>
+    	<version>1.7.25</version>
+	</dependency>
+  </dependencies>
+  
+</project>
