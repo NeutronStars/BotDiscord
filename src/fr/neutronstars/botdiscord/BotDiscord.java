@@ -20,7 +20,7 @@ public class BotDiscord implements Runnable{
 	private boolean running;
 	
 	public BotDiscord() throws LoginException, IllegalArgumentException, RateLimitedException {
-		jda = new JDABuilder(AccountType.BOT).setToken("MzEyMjQ4MjAzMTIwNDc2MTcw.C_Yrpg.Rew7ka70qvKv3S3BaMUHOutRoHA").buildAsync();
+		jda = new JDABuilder(AccountType.BOT).setToken("Votre Token").buildAsync();
 		jda.addEventListener(new BotListener(commandMap));
 		System.out.println("Bot connected.");		
 	}
