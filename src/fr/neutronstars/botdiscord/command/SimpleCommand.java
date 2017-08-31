@@ -10,14 +10,16 @@ public final class SimpleCommand {
 	private final ExecutorType executorType;
 	private final Object object;
 	private final Method method;
+	private final int power;
 	
-	public SimpleCommand(String name, String description, ExecutorType executorType, Object object, Method method) {
+	public SimpleCommand(String name, String description, ExecutorType executorType, Object object, Method method, int power){
 		super();
 		this.name = name;
 		this.description = description;
 		this.executorType = executorType;
 		this.object = object;
 		this.method = method;
+		this.power = power;
 	}
 
 	public String getName() {
@@ -40,5 +42,7 @@ public final class SimpleCommand {
 		return method;
 	}
 	
-	
+	public int getPower() {
+		return power;
+	}
 }

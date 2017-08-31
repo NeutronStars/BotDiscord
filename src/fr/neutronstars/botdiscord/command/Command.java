@@ -13,6 +13,8 @@ public @interface Command {
 	public String description() default "Sans description.";
 	public ExecutorType type() default ExecutorType.ALL;
 	
+	public int power() default 0;
+	
 	public enum ExecutorType{
 		ALL, USER, CONSOLE;
 	}

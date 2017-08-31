@@ -7,6 +7,7 @@ import fr.neutronstars.botdiscord.command.Command.ExecutorType;
 import fr.neutronstars.botdiscord.command.CommandMap;
 import fr.neutronstars.botdiscord.command.SimpleCommand;
 import net.dv8tion.jda.core.EmbedBuilder;
+import net.dv8tion.jda.core.entities.Guild;
 import net.dv8tion.jda.core.entities.MessageChannel;
 import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.entities.impl.UserImpl;
@@ -20,7 +21,7 @@ public class HelpCommand {
 	}
 	
 	@Command(name="help",type=ExecutorType.USER,description="affiche la liste des commandes.")
-	private void help(User user, MessageChannel channel){
+	private void help(User user, MessageChannel channel, Guild guild){
 		
 		EmbedBuilder builder = new EmbedBuilder();
 		builder.setTitle("Liste des commandes.");
@@ -28,6 +29,8 @@ public class HelpCommand {
 		
 		for(SimpleCommand command : commandMap.getCommands()){
 			if(command.getExecutorType() == ExecutorType.CONSOLE) continue;
+			
+			if(guild != null && command.getPower() > commandMap.getPowerUser(guild, user)) continue;
 			
 			builder.addField(command.getName(), command.getDescription(), false);
 		}
