@@ -15,7 +15,7 @@ public @interface Command {
 	
 	public int power() default 0;
 	
-	public enum ExecutorType{
+	public enum ExecutorType{ffff
 		ALL, USER, CONSOLE;
 	}
 }
